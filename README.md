@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend Vanilla Boilerplate
 ## Supports
   * ES6
@@ -41,3 +42,7 @@
  ```
 
    __Don't edit files in the public folder!__
+=======
+# FrontendBoilerplate
+A frontend Boilerplate to Start a project with 
+>>>>>>> 226001fb848c5ebf3a5534b9a7896e83695ad75e
