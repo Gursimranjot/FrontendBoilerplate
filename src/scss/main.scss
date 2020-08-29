@@ -5,15 +5,9 @@
 @import "base/variables";
 @import "base/_fonts";
 @import "base/_pagelayout";
+@import "url/_hello";
+
 
 /*--Components--*/
 
 
-
-body {
-  padding: 0;
-  margin: 0;
-  background: $template-color;
-  width: 100%;
-  height: 100%;
-}

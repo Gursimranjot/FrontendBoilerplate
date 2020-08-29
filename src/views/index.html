@@ -14,16 +14,174 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
   <script src="assets/js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
+  <!-- <script src="assets/js/jquery.min.js"></script> -->
 </head>
 
 <body>
   <!--[if lt IE 8]> <p class="browserupgrade">You are using an old browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
-  <h1 class="helloworld">I am alive! now</h1>
-  <img id="imagesection" src="assets/images/image.jpg" alt="" width="50">
-  <a href="javascript:;" data-line="Subscribe?" class="btn-default btn-sm pd-20 unSubscribeTraining">Unsubscribe</a>
+  <div class="container" id="container">
+    <div id="drop-down-container">
+      <label for="drop-down">Select Item:</label>
+      <select id="drop-down" name="food-items" style="width: 200px">
+        <optgroup label="Fruits">
+          <option value="apple" selected>Apple</option>
+          <option value="banana">Banana</option>
+          <option value="cherries">Cherries</option>
+          <option value="dates">Dates</option>
+          <option value="grapes">Grapes</option>
+          <option value="guava">Guava</option>
+          <option value="kiwi">Kiwi</option>
+          <option value="orange">Orange</option>
+          <option value="papaya">Papaya</option>
+          <option value="pineapple">Pineapple</option>
+        </optgroup>
+        <optgroup label="Vegetables">
+          <option value="carrot">Carrot</option>
+          <option value="broccoli">Broccoli</option>
+          <option value="cauliflower">Cauliflower</option>
+          <option value="cucumber">Cucumber</option>
+          <option value="lettuce">Lettuce</option>
+          <option value="mushrooms">Mushrooms</option>
+          <option value="onion">Oninon</option>
+          <option value="pumpkin">Pumpkin</option>
+          <option value="tomato">Tomato</option>
+          <option value="potato">Potato</option>
+        </optgroup>
+      </select>
+      <button type="button" id="elementSelector">Add</button>
+    </div>
+    <div id="output-container">
+      <div id="fruit-list-container">
+        <h2>Fruits:</h2>
+        <ul id="fruit-list"></ul>
+      </div>
+      <div id="vegetable-list-container">
+        <h2>Vegetables:</h2>
+        <ul id="vegetable-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p>Event listener</p>
+    <button class="btn btn-primary">Hey</button>
+    <!-- <h1 id="totalClicks"></h1>
+    <input type="text" class="form-control js-name">
+    <h2>Hello Gursimran</h2>
+    <span class="js-change-name"></span>
+    <button class="btn btn-primary" id="clicker" value="20">hey Man</button>
+
+    <h3>Changing css with Event listener</h3>
+    <div class="form-group">
+      <label for="">Background Color</label>
+      <input type="text" class="form-control js-bg-color" style="padding:30px;font-size:30px">
+    </div>
+    <div class="form-group">
+      <label for=""> Text Color</label>
+      <input type="text" class="form-control js-text-color" style="padding:30px;font-size:30px">
+    </div> -->
+    <input type="text" class="bgcolorselector" placeholder="background color">
+    <input type="text" class="textselector" placeholder="text color">
+    <input type="text" class="fontselector" placeholder="font size">
+
+  </div>
+
   <!--Scripts here-->
-  <script src="assets/js/main.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <!-- <script type="application/javascript">
+    // define ref data
+    const fruits = [
+      "apple",
+      "banana",
+      "cherries",
+      "dates",
+      "grapes",
+      "guava",
+      "kiwi",
+      "orange",
+      "papaya",
+      "pineapple",
+    ];
+    const vegetables = [
+      "carrot",
+      "broccoli",
+      "cauliflower",
+      "cucumber",
+      "lettuce",
+      "mushrooms",
+      "onion",
+      "pumnkin",
+      "tomato",
+      "potato",
+    ];
+
+    // define onclick handler
+    function onSubmit() {
+      console.groupCollapsed("program");
+      console.log(`clicked on submit button`);
+      // so user clicked, get dropdown value
+      const dropdownVal = document.querySelector("#drop-down").value;
+      console.log("selected dropdown value - ", dropdownVal);
+      // so we got the value, now check if exists in fruits ref data
+      if (fruits.includes(dropdownVal)) {
+        // yes, we got a fruit value, now append this to fruit list
+        // first in order to append to fruit list, let's get it first
+        const fruitList = document.querySelector("#fruit-list"); // fruit list ul
+        const fruitValueListItem = document.createElement("li"); // a new li for adding new value
+        fruitValueListItem.innerText = dropdownVal; // adding new value to it
+        fruitList.appendChild(fruitValueListItem); // appending it to fruilist
+      }
+      //if we are here, it means val must be a vegetable.
+      if (vegetables.includes(dropdownVal)) {
+        // yes, we got a vegetable value, now append this to vegetable list
+        // first in order to append to vegetable list, let's get it first
+        const vegetableList = document.querySelector("#vegetable-list"); // fruit list ul
+        const vegetableValueListItem = document.createElement("li"); // a new li for adding new value
+        vegetableValueListItem.innerText = dropdownVal; // adding new value to it
+        vegetableList.appendChild(vegetableValueListItem); // appending it to fruilist
+      }
+      console.groupEnd();
+
+      // function getPerson(name) {
+      //   this.name = name;
+      //   this.profession = "Teacher and Dev";
+      //   return this;
+      // }
+      // var kalob = getPerson("Kalob");
+
+    }
+  </script> -->
+
+  <script>
+    // var btn = document.querySelector(".btn-primary");
+    // var totalclicks = 0;
+    // btn.addEventListener('click', function (event) {
+    //   btn.innerHTML = "click me please";
+    //   console.log(totalclicks++);
+    //   document.getElementById("totalClicks").innerHTML = totalclicks;
+    // });
+    // var input = document.querySelector('.js-name');
+    // var nameElem = document.querySelector(".js-change-name");
+    // var clickcheck = document.querySelector("#clicker");
+    // clickcheck.addEventListener('click', function (e) {
+    //   console.log(event.target.value);
+    //   this.innerText = event.target.value;
+    // })
+    // input.addEventListener('keyup', function (e) {
+    //   console.log(event.target.value);
+    //   nameElem.innerText = event.target.value;
+    // });
+
+    // var bgColor = document.querySelector(".js-bg-color");
+    // var textColor = document.querySelector(".js-text-color");
+    // bgColor.addEventListener('keyup', function (event) {
+    //   console.log(event.target.value);
+    // })
+
+
+
+
+  </script>
 </body>
 
 </html>

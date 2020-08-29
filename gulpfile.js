@@ -64,7 +64,7 @@ gulp.task('babel', function () {
 	])
 		.pipe(sourcemaps.init())
 		.pipe(webpack(require('./webpack.config.js')))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('./public/assets/js'))
 		.pipe(browserSync.reload({
 			stream: true,
